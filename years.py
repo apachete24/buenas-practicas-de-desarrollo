@@ -1,7 +1,10 @@
 import re
 
 cadena = input().strip()
-regex = r"E?\d{4}[\s|-]?[A-Z]{3}"
+
+regex = r"\d{4}+(?=\.?)"
 matchs = re.findall(regex, cadena)
 
-print(*matchs, sep="\n")
+print("\n".join(matchs))
+
+
