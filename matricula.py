@@ -4,5 +4,4 @@ cadena = input().strip()
 regex = r"\bE?[\s-]?\d{4}[\s-]?[A-Z]{3}\b"
 matchs = re.findall(regex, cadena)
 
-for match in matchs:
-    print(match)
+print(*matchs, "\n")
