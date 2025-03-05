@@ -1,15 +1,9 @@
 import re
 
-cadena = input()
+cadena = input().strip()
+regex = r"\b(\d{4})-(\d{2})-(\d{2})\b"
 
-regex = r"(?<= )\d{4}-\d{2}-\d{2}(?= )"
-matchs = re.findall(regex, cadena)
-
-for i, fecha in enumerate(matchs):
-    tmp = fecha.split('-')
-    matchs[i] = f"{tmp[2]}.{tmp[1]}.{tmp[0]}"
+matchs = re.sub(regex, r"\3.\2.\1", cadena)
 
 
-print("\n".join(matchs))
-
-
+print(matchs)
